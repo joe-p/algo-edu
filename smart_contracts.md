@@ -4,12 +4,12 @@
 
 # Tech Stack
 
-* Algorand Virtual Machine (AVM)
+* [Algorand Virtual Machine (AVM)](https://developer.algorand.org/docs/get-details/dapps/avm/)
   * Running on every node
   * Not compatible with Ethereum Virtual Machine
-* Transaction Execution Approval Language
+* [Transaction Execution Approval Language](https://developer.algorand.org/docs/get-details/dapps/avm/teal/)
   * Assembly-like language for writing smart contracts
-* PyTeal and beaker
+* [PyTeal](https://developer.algorand.org/docs/get-details/dapps/pyteal/) and [beaker](https://github.com/algorand-devrel/beaker)
   * Python library and framework for writing Algorand smart contracts
   * Ultimately compiles down to teal
 
@@ -29,7 +29,7 @@
 All of these will be discussed in more depth in future slides
 :::
 
-# Modes of Use
+# [Modes of Use](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/)
 
 * Stateless - Smart Signature
   * Delegated approval: sign transactions from any account that signs the logic

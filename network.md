@@ -12,7 +12,7 @@
 * Betanet
   * Running future software versions
   
-# Configurable Modes
+# [Configurable Modes](https://developer.algorand.org/docs/run-a-node/setup/types/#:~:text=The%20Algorand%20network%20is%20comprised,all%20connected%20non%2Drelay%20nodes.)
 
 * Participation
   * Used to participate in consensus to secure network
@@ -28,14 +28,14 @@
 These modes of configuration are orthogonal, although you typically run one at a time
 :::
 
-# Decentralization
+# [Decentralization](https://metrics.algorand.org/#/decentralization/)
 
 * 1000+ nodes
 * Participation nodes are permissionless
 * Default relay nodes are chosen by Foundation
   * Anyone can run one, but nodes must point to it
 
-# Consensus - Pure Proof of Stake
+# [Consensus - Pure Proof of Stake](https://www.algorand.com/technology/algorand-protocol)
 * Three Steps
   1. Block proposal: Accounts propose new blocks to the network
   2. Soft Vote: Committee votes on proposals and filters down to one
@@ -45,7 +45,7 @@ These modes of configuration are orthogonal, although you typically run one at a
   * The amount of random numbers generated (thus chance of participating) is proportional to ALGO in account
   * New participants are selected for each step
 
-# Participating
+# [Participating](https://developer.algorand.org/docs/run-a-node/participate/)
 
 * Requirements
   * Must be running participation node
@@ -88,17 +88,16 @@ The incentivization model is based on game theory. Someone with a large stake in
 
 # Interacting With Nodes
 
-* goal
+* [goal](https://developer.algorand.org/docs/clis/goal/goal/)
   * Command-line utility for interacting with algod and kmd
-* SDKs
+* [SDKs](https://developer.algorand.org/docs/sdks/)
   * Leverage HTTP endpoints to interact with algod and kmd
-* Public API services
+* [Public API services](https://developer.algorand.org/docs/get-started/devenv/#2-third-party-api-services)
   * Services that expose HTTP endpoints for their node(s) publicly
-
 
 # Installation
 
-* sandbox
+* [sandbox](https://developer.algorand.org/docs/get-started/devenv/#1-sandbox)
   * Leverages docker to quickly deploy a node
   * Often used for local networks for development and testing
 * Manual installation
