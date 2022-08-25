@@ -55,8 +55,8 @@ MBR is essentially a way of renting space on the blockchain
 | Action               | Effect                                                     | Effect on MBR                                                                                                                                                                                      |
 | -------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Asset opt-in         | account can receive the asset                              | increased by 0.1 ALGO                                                                                                                                                                              |
-| Application opt-in   | application can save state to the account                  | increased proportional to data saved locally ([see formula here]((https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract)))  |
-| Application creation | application is created                                     | increased proportional to data saved globally ([see formula here]((https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract))) |
+| Application opt-in   | application can save state to the account                  | increased proportional to data saved locally (see formula [here](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract))  |
+| Application creation | application is created                                     | increased proportional to data saved globally (see formula [here](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract)) |
 | Asset opt-out        | account can no longer hold or receive asset                | decreased by 0.1 ALGO                                                                                                                                                                              |
 | Application opt-out  | account's local state for the given application is cleared | decreased by same amount as opt-in                                                                                                                                                                 |
 | Application delete   | no one can interact with the app                           | decreased by same amount as creation                                                                                                                                                               |
@@ -65,3 +65,11 @@ MBR is essentially a way of renting space on the blockchain
 * Allows a different private key to sign for a given address
 * Once an account is rekeyed the original private key can no longer sign transactions
 * Rekeying can be initiated with any regular transaction
+
+# Atomic Transactions
+
+* Algorand supports grouping 16 transactions together
+  * If one transaction fails, they all fail
+* Smart contracts can also send 16 transactions
+  * Total of 256 atomic transactions
+* Smart contracts can verify data of transactions in the same group
