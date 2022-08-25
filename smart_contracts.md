@@ -43,11 +43,76 @@ All of these will be discussed in more depth in future slides
 Applications are strongly preferred for a better user experience and security. Now with inner transactions an app can do most things that you used to need a smart signature for.
 :::
 
-# Application Anatomy - State
+# Application State
 
 * Global state
   * 64 key/value pairs
   * Limited to 128 bytes per key/value pair
 * Local state
   * 16 key/value pairs *per account*
+  * Limited to 128 bytes per key/value pair
   * Accounts must opt-in
+
+# Inner Transactions
+
+* An application can send any transaction type
+  * This includes application calls
+* An application can send up to 16 transactions
+  * Inner transactions are atomic with the outer transactions
+  * One failure will cause all to fail
+* Every application has its own contract address it can spend from
+
+# Logging
+
+* Applications can log data during execution
+* Logs are only saved upon completion
+* Other applications can read logged data
+
+# ARC-0004: ABI
+
+* Standardizes encoding/decoding methods for types beyond Uint64 and Bytes
+  * UintN, tuples, decimals, booleans, etc.
+* Provides standard way of method calling
+* JSON schema for defining available methods
+* Logging for return values
+
+# Constraints
+
+* Opcode budget
+  * Every opcode has a cost proportional to computational complexity
+  * Budget is pooled in grouped application calls
+* State access
+  * Caller must predefine what the smart contract will be accessing
+    * accounts
+    * applications
+    * assets
+  
+# App Call Anatomy
+
+* App arrays
+  * Defines what state can be accessed
+* Arguments array
+  * Arguments that can be read by the application
+* OnComplete
+  * Action to take upon execution of the logic
+  
+# App Creation Anatomy
+
+* TEAL Programs
+  * Approval program defines primary logic for application creation/calls
+  * Clear program defines logic for clearing local application state
+* Schema
+  * Defines the number of key/value pairs that store integers or bytes
+  * Defined for both global state and local state
+  * Schema can not be updated
+
+# On Completions
+
+| OnComplete | Program | Action |
+| --- | --- |
+| NoOp | Approval | Nothing |
+| OptIn | Approval | Allocates local state for sender |
+| CloseOut | Approval | Clear local state of sender |
+| ClearState | Clear | Clear local state of sender regardless of logic result |
+| UpdateApplication | Updates the approval and clear programs |
+| DeleteApplication | Deletes the application |
