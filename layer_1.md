@@ -52,14 +52,14 @@ MBR is essentially a way of renting space on the blockchain
 
 # MBR Changes
 
-| Action               | Effect                                                     | Effect on MBR                                                                                                                                                                                      |
-| -------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Asset opt-in         | account can receive the asset                              | increased by 0.1 ALGO                                                                                                                                                                              |
-| Application opt-in   | application can save state to the account                  | increased proportional to data saved locally (see formula [here](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract))  |
-| Application creation | application is created                                     | increased proportional to data saved globally (see formula [here](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract)) |
-| Asset opt-out        | account can no longer hold or receive asset                | decreased by 0.1 ALGO                                                                                                                                                                              |
-| Application opt-out  | account's local state for the given application is cleared | decreased by same amount as opt-in                                                                                                                                                                 |
-| Application delete   | no one can interact with the app                           | decreased by same amount as creation                                                                                                                                                               |
+| Action | Effect | Effect on MBR |
+| ------ | ------ | ------------- |
+| Asset opt-in | account can receive the asset | increased by 0.1 ALGO |
+| Application opt-in | application can save state to the account | increased proportional to data saved locally (see formula [here](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract)) |
+| Application creation | application is created | increased proportional to data saved globally (see formula [here](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/apps/#minimum-balance-requirement-for-a-smart-contract)) |
+| Asset opt-out | account can no longer hold or receive asset | decreased by 0.1 ALGO |
+| Application opt-out | account's local state for the given application is cleared | decreased by same amount as opt-in |
+| Application delete   | no one can interact with the app | decreased by same amount as creation |
 # [Rekeying](https://www.algorand.com/technology#REKEYING)
 
 * Allows a different private key to sign for a given address
