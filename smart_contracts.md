@@ -1,6 +1,6 @@
 % Algorand Smart Contracts
 % github.com/joe-p/algo-edu
-% 08/21/2022
+% 09/06/2022
 
 # Tech Stack
 
@@ -32,6 +32,7 @@ All of these will be discussed in more depth in future slides
 # [Modes of Use](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/)
 
 * Stateless - Smart Signature
+  * Signs transactions conditionally based on smart contract logic
   * Delegated approval: sign transactions from any account that signs the logic
   * Contract account: sign transactions from contract-specific account
 * Stateful - Applications
@@ -60,21 +61,13 @@ Applications are strongly preferred for a better user experience and security. N
 * An application can send up to 16 transactions
   * Inner transactions are atomic with the outer transactions
   * One failure will cause all to fail
-* Every application has its own contract address it can spend from
+* Every application has its own contract address it can send transactions from
 
 # Logging
 
 * Applications can log data during execution
 * Logs are only saved upon completion
 * Other applications can read logged data
-
-# ARC-0004: ABI
-
-* Standardizes encoding/decoding methods for types beyond Uint64 and Bytes
-  * UintN, tuples, decimals, booleans, etc.
-* Provides standard way of method calling
-* JSON schema for defining available methods
-* Logging for return values
 
 # Constraints
 
@@ -109,10 +102,18 @@ Applications are strongly preferred for a better user experience and security. N
 # On Completions
 
 | OnComplete | Program | Action |
-| --- | --- |
+| --- | --- | --- |
 | NoOp | Approval | Nothing |
 | OptIn | Approval | Allocates local state for sender |
 | CloseOut | Approval | Clear local state of sender |
 | ClearState | Clear | Clear local state of sender regardless of logic result |
-| UpdateApplication | Updates the approval and clear programs |
-| DeleteApplication | Deletes the application |
+| UpdateApplication | Approval | Updates the approval and clear programs |
+| DeleteApplication | Approval | Deletes the application |
+
+# ARC-0004: ABI
+
+* Standardizes encoding/decoding methods for types beyond Uint64 and Bytes
+  * UintN, tuples, decimals, booleans, etc.
+* Provides standard way of method calling
+* JSON schema for defining available methods
+* Logging for return values
