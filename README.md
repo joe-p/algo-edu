@@ -2,7 +2,7 @@
 | Content | Description | Status | Last Updated | Primary Maintainer |
 | ------ | ----------- | ------ | ------------- | ---------- |
 | [Network](en-US/network.md) | Overview of Algorand network topology, software, and decentralization | WIP | 09/07/22 | [joe-p](https://github.com/joe-p) |
-| [Layer-1 Features](en-US/layer_1.md) | Overview of Algorand's layer-1 performance and features | WIP | 09/07/22 | [joe-p](https://github.com/joe-p) |
+| [Layer-1 Features](en-US/layer_1.md) | Overview of Algorand's layer-1 performance and features | WIP | 09/08/22 | [joe-p](https://github.com/joe-p) |
 | [Smart Contracts](en-US/smart_contracts.md) | Overview of Algorand smart contracts | WIP | 09/07/22 | [joe-p](https://github.com/joe-p) |
 | [Development Intro](en-US/dev_intro.md) | Overview of development tools and resources | WIP | 09/07/22  | [joe-p](https://github.com/joe-p) |
 | [Intro to PyTeal](en-US/pyteal_intro.md) | Introduction to PyTeal concepts | WIP | 09/07/22 | [joe-p](https://github.com/joe-p) |

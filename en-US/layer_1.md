@@ -1,6 +1,6 @@
 ---
 marp: true
-header: 'Algorand Layer 1 Features - 09/07/2022 '
+header: 'Algorand Layer 1 Features - 09/08/2022 '
 footer: 'github.com/joe-p/algo-edu'
 paginate: true
 ---
@@ -36,7 +36,7 @@ The average TPS right now is between 10-20 (for most chains, including Algorand)
 * Flat fee until congestion
 * Turing complete
   * Hard-coded limitations to keep complexity in check
-* Ability to send transactions
+* Can read/write blockchain state and send transactions
 
 ---
 
@@ -55,10 +55,8 @@ The average TPS right now is between 10-20 (for most chains, including Algorand)
   * Starts at 0.1 ALGO
 * Any transaction that would result in an account going under the MBR will fail
   * Exception is when an account makes an account to specifically close out the entire balance
-
-<!--
-MBR is essentially a way of renting space on the blockchain
--->
+* MBR is a way to rent space in the current state of the blockahin
+  * Since ALGO is capped, the active state of the blockchain is also capped
 
 ---
 
