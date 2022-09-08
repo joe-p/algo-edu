@@ -1,6 +1,9 @@
-% Algorand Smart Contracts
-% github.com/joe-p/algo-edu
-% 09/06/2022
+---
+marp: true
+header: 'Algorand Smart Contracts - 09/07/2022 '
+footer: 'github.com/joe-p/algo-edu'
+paginate: true
+---
 
 # Tech Stack
 
@@ -14,6 +17,8 @@
   * Ultimately compiles down to teal
 
 
+---
+
 # Algorand Virtual Machine
 
 * Available data
@@ -25,9 +30,11 @@
   * Static fees mean we need to constrain execution in another way
   * Constraints are hardcoded into AVM to limit computational complexity
 
-::: notes
+<!--
 All of these will be discussed in more depth in future slides
-:::
+-->
+
+---
 
 # [Modes of Use](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/)
 
@@ -40,10 +47,12 @@ All of these will be discussed in more depth in future slides
   * Logging
   * Inner transactions
 
-::: notes
+<!--
 Applications are strongly preferred for a better user experience and security. Now with inner transactions an app can do most things that you used to need a smart signature for.
-:::
+-->
 
+
+---
 # Application State
 
 * Global state
@@ -54,6 +63,8 @@ Applications are strongly preferred for a better user experience and security. N
   * Limited to 128 bytes per key/value pair
   * Accounts must opt-in
 
+---
+
 # Inner Transactions
 
 * An application can send any transaction type
@@ -63,11 +74,16 @@ Applications are strongly preferred for a better user experience and security. N
   * One failure will cause all to fail
 * Every application has its own contract address it can send transactions from
 
+---
+
 # Logging
 
 * Applications can log data during execution
 * Logs are only saved upon completion
 * Other applications can read logged data
+
+
+---
 
 # Constraints
 
@@ -80,6 +96,8 @@ Applications are strongly preferred for a better user experience and security. N
     * applications
     * assets
   
+---
+
 # App Call Anatomy
 
 * App arrays
@@ -89,6 +107,9 @@ Applications are strongly preferred for a better user experience and security. N
 * OnComplete
   * Action to take upon execution of the logic
   
+
+---
+
 # App Creation Anatomy
 
 * TEAL Programs
@@ -98,6 +119,8 @@ Applications are strongly preferred for a better user experience and security. N
   * Defines the number of key/value pairs that store integers or bytes
   * Defined for both global state and local state
   * Schema can not be updated
+
+---
 
 # On Completions
 
@@ -110,6 +133,7 @@ Applications are strongly preferred for a better user experience and security. N
 | UpdateApplication | Approval | Updates the approval and clear programs |
 | DeleteApplication | Approval | Deletes the application |
 
+---
 # ARC-0004: ABI
 
 * Standardizes encoding/decoding methods for types beyond Uint64 and Bytes

@@ -1,7 +1,9 @@
-% Algorand Layer 1 Features
-% github.com/joe-p/algo-edu
-% 08/21/2022
-
+---
+marp: true
+header: 'Algorand Layer 1 Features - 09/07/2022 '
+footer: 'github.com/joe-p/algo-edu'
+paginate: true
+---
 # [Performance](https://developer.algorand.org/docs/get-started/basics/why_algorand/#performance)
 
 * ~4 second block time
@@ -10,9 +12,11 @@
 * .001 ALGO fee
 * Low energy consumption
 
-::: notes
+<!--
 The average TPS right now is between 10-20 (for most chains, including Algorand). The fee is subject to increase under congestion
-:::
+-->
+
+---
 
 # [Algorand Standard Assets (ASA)](https://www.algorand.com/technology#ALGORAND-STANDARD-ASSETS)
 
@@ -25,12 +29,16 @@ The average TPS right now is between 10-20 (for most chains, including Algorand)
   * Metadata URL: Point to off-chain metadata for a token
   * Opt-in: Accounts must whitelist assets they wish to receive
 
+---
+
 # [Smart Contracts](https://www.algorand.com/technology#SMART-CONTRACTS-&-AVM)
 
 * Flat fee until congestion
 * Turing complete
   * Hard-coded limitations to keep complexity in check
 * Ability to send transactions
+
+---
 
 # [State Proofs](https://developer.algorand.org/docs/get-details/stateproofs/)
 
@@ -39,6 +47,8 @@ The average TPS right now is between 10-20 (for most chains, including Algorand)
   * Bridge on another chain can verify Algorand state proof on-chain
 * Provides quantum security of chain history
 
+---
+
 # [Minimum balance requirement (MBR)](https://developer.algorand.org/docs/get-details/accounts/#minimum-balance)
 
 * Every account has a minimum balance
@@ -46,9 +56,11 @@ The average TPS right now is between 10-20 (for most chains, including Algorand)
 * Any transaction that would result in an account going under the MBR will fail
   * Exception is when an account makes an account to specifically close out the entire balance
 
-::: notes
+<!--
 MBR is essentially a way of renting space on the blockchain
-:::
+-->
+
+---
 
 # MBR Changes
 
@@ -60,11 +72,16 @@ MBR is essentially a way of renting space on the blockchain
 | Asset opt-out | account can no longer hold or receive asset | decreased by 0.1 ALGO |
 | Application opt-out | account's local state for the given application is cleared | decreased by same amount as opt-in |
 | Application delete   | no one can interact with the app | decreased by same amount as creation |
+
+---
+
 # [Rekeying](https://www.algorand.com/technology#REKEYING)
 
 * Allows a different private key to sign for a given address
 * Once an account is rekeyed the original private key can no longer sign transactions
 * Rekeying can be initiated with any regular transaction
+
+---
 
 # Atomic Transactions
 

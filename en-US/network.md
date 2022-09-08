@@ -1,6 +1,9 @@
-% Algorand Network
-% github.com/joe-p/algo-edu
-% 08/21/2022
+---
+marp: true
+header: 'Algorand Network - 09/07/2022 '
+footer: 'github.com/joe-p/algo-edu'
+paginate: true
+---
 
 # Public Networks
 
@@ -11,6 +14,8 @@
   * Running same software version as MainNet
 * Betanet
   * Running future software versions
+  
+---
   
 # [Configurable Modes](https://developer.algorand.org/docs/run-a-node/setup/types/#:~:text=The%20Algorand%20network%20is%20comprised,all%20connected%20non%2Drelay%20nodes.)
 
@@ -24,9 +29,11 @@
   * Routes data between participation nodes
   * Do not affect consensus
 
-::: notes
+<!--
 These modes of configuration are orthogonal, although you typically run one at a time
-:::
+-->
+
+---
 
 # [Decentralization](https://metrics.algorand.org/#/decentralization/)
 
@@ -34,6 +41,8 @@ These modes of configuration are orthogonal, although you typically run one at a
 * Participation nodes are permissionless
 * Default relay nodes are chosen by Foundation
   * Anyone can run one, but nodes must point to it
+
+---
 
 # [Consensus - Pure Proof of Stake](https://www.algorand.com/technology/algorand-protocol)
 * Three Steps
@@ -44,6 +53,8 @@ These modes of configuration are orthogonal, although you typically run one at a
   * Each account generates random numbers via VRF
   * The amount of random numbers generated (thus chance of participating) is proportional to ALGO in account
   * New participants are selected for each step
+
+---
 
 # [Participating](https://developer.algorand.org/docs/run-a-node/participate/)
 
@@ -56,9 +67,11 @@ These modes of configuration are orthogonal, although you typically run one at a
   * No rewards
   * No slashing
 
-::: notes
+<!--
 The incentivization model is based on game theory. Someone with a large stake in the network will want to protect the network by running a node
-:::
+-->
+
+---
 
 # Hardware Requirements
 
@@ -73,6 +86,8 @@ The incentivization model is based on game theory. Someone with a large stake in
   * 500GB NVMe SSD
   * 1Gbps broadband symmetrical with low latency connection to the network
 
+---
+
 # Software
 
 * algod - Algorand Daemon
@@ -86,6 +101,8 @@ The incentivization model is based on game theory. Someone with a large stake in
   * Saves blockchain state in SQL database
   * Provides HTTP endpoints specifically for querying on-chain data
 
+---
+
 # Interacting With Nodes
 
 * [goal](https://developer.algorand.org/docs/clis/goal/goal/)
@@ -94,6 +111,8 @@ The incentivization model is based on game theory. Someone with a large stake in
   * Leverage HTTP endpoints to interact with algod and kmd
 * [Public API services](https://developer.algorand.org/docs/get-started/devenv/#2-third-party-api-services)
   * Services that expose HTTP endpoints for their node(s) publicly
+
+---
 
 # Installation
 

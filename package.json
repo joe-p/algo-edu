@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@marp-team/marp-cli": "^2.1.2"
+  },
+  "scripts": {
+    "start": "marp ./**/*.md --pptx",
+    "zip": "zip algo-edu-$(git rev-parse --short HEAD)$(git diff --quiet || echo '-dirty').zip ./**/*.md ./**/*.pptx",
+    "clean": "rm -f ./**/*.pptx && rm -f ./*.zip"
+  }
+}

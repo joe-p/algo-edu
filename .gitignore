@@ -2,3 +2,4 @@
 *.pdf
 *.zip
 .vscode/
+node_modules/

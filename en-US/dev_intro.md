@@ -1,7 +1,9 @@
-% Algorand Development Introduction
-% github.com/joe-p/algo-edu
-% 09/06/2022
-
+---
+marp: true
+header: 'Intro to Algorand Development - 09/07/2022 '
+footer: 'github.com/joe-p/algo-edu'
+paginate: true
+---
 # Tools
 
 * Sandbox
@@ -15,6 +17,8 @@
 * IPFS
   * Decentralized storage network
 
+---
+
 # Resources
 
 * Developer Portal
@@ -25,6 +29,8 @@
   * Algorand, AlgorandFoundation
 * @AlgoDevs Twitter
 
+---
+
 # Encoding
 
 * Smart contracts work with raw bytes
@@ -34,12 +40,15 @@
   * JavaScript has 
     * `Buffer.from(data, encoding)`
     * `algosdk.encodeUint64(number)`
+---
 
 # Encoding Examples
   * utf-8: `byte "Hello World"`
   * hexadecimal: `byte 0x48656C6C6F20576F726C64`
   * base64: `byte b64 SGVsbG8gV29ybGQ=`
   * base32: `byte b32 JBSWY3DPEBLW64TMMQ======`
+
+---
 
 # Accounts
 
@@ -50,6 +59,8 @@
 * 25-word Mnemonic is derived from private key
   * Uses BIP-0039 wordlist in a non-standard algorithim
 * Smart contracts use raw public key
+
+---
 
 # HTTP Endpoints
 
@@ -64,9 +75,8 @@
   * Suggested transaction parameters
 * KMD provides HTTP endpoints for managing accounts
 
-::: notes
-Generally everything on indexer is from algod, but indexer is preferred when available
-:::
+<!-- Generally everything on indexer is from algod, but indexer is preferred when available -->
+---
 
 # Connection Options
 
