@@ -1,6 +1,6 @@
 ---
 marp: true
-header: 'Intro To PyTeal - 09/07/2022 '
+header: 'Intro To PyTeal - 09/10/2022 '
 footer: 'github.com/joe-p/algo-edu'
 paginate: true
 ---
@@ -52,9 +52,10 @@ print(compileTeal(approval_program(), mode=Mode.Application, version=7))
         Return()
 ```
 
-* We want our `approval_program()` function to return a `Seq`
+* We want our `approval_program()` function to return the `Seq`
 * Every argument of the `Seq` must be a PyTeal expression
-* `return` would return `approval_program()`, thus we want to use `Return()`
+* `Return()` is the PyTeal expression for the `return` opcode
+* `Approve()` is shorthand for `Int(1), Return()`
 
 ---
 
@@ -81,19 +82,74 @@ def approval_program():
         [option == Bytes("A"), Log(Bytes("Option A was selected!"))],
         [option == Bytes("B"), Log(Bytes("Option B was selected!"))],
         [option == Bytes("C"), Log(Bytes("Option C was selected!"))]
+        # An error will occur if option != A, B, or C
     )
 
 print(compileTeal(approval_program(), mode=Mode.Application, version=7))
 ```
 
 ---
+# App Arrays
 
-# ABI Subroutines
+```py
+def approval_program():
+    return Seq(
+        Log(Concat(Bytes("The first account is "), Txn.accounts[1])), # Txn.accounts[0] is always sender
+        Log(Concat(Bytes("The first asset ID is "), Itob(Txn.assets[0]))),
+        Log(Concat(Bytes("The first app ID is "), Itob(Txn.applications[0]))),
+        Approve()
+    )
+```
+---
+
+# Inner Txns
+
+```py
+def axfer_to_sender():
+    return Seq(
+        InnerTxnBuilder.Begin(),
+        InnerTxnBuilder.SetFields(
+            {
+                TxnField.type_enum: TxnType.AssetTransfer,
+                # Generally set fee to 0 and use fee pooling to cover.
+                # Doing so prevents unpredictable fees from having unintended consequences during congestion.
+                TxnField.fee: Int(0)
+                TxnField.receiver: Txn.sender(),
+                TxnField.amount: Int(1),
+                TxnField.asset_sender: Global.current_application_address(),
+                TxnField.xfer_asset: Txn.assets[0],
+            }
+        )
+    )
+```
+---
+
+# Maybe Values
+
+```py
+def approval_program():
+    # Some opcodes, like app_global_get_ex, return two values:
+    #   1. The actual value (.value())
+    #   2. Boolean to signal whether there actually is a value or not (.hasValue())
+    myStatus = App.globalGetEx(Txn.applications[1], Bytes("status"))
+
+    return Seq(
+        myStatus, # the function that returns the maybeValue must be in the sequence
+        Log(If(myStatus.hasValue(), myStatus.value(), Bytes("none"))),
+        Approve()
+    )
+```
 
 ---
 
-# Application Arrays
+# What's Next?
 
----
-
-# Inner Transactions
+* If you want a full framework for writing ABI-compliant applicaions
+  * Learn Beaker!
+    * Easily route ABI methods
+    * Easily read and write application state
+    * Easily write application tests
+    * Easily implement logic in TypeScript front-ends
+* If you want to know more about PyTeal
+  * [Refer to the documentation](https://pyteal.readthedocs.io/en/latest/)
+  * [Visit the developer portal](https://developer.algorand.org/docs/get-details/dapps/pyteal/)
