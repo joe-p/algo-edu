@@ -1,6 +1,6 @@
 ---
 marp: true
-header: 'Intro To PyTeal - 09/10/2022 '
+header: 'Intro To PyTeal - 09/12/2022 '
 footer: 'github.com/joe-p/algo-edu'
 paginate: true
 ---
@@ -13,49 +13,48 @@ from pyteal import *
 def approval_program():
     return Seq(
         Log(Bytes("Hello World!")),
-        Int(1),
-        Return()
+        Return(Int(1))
     )
 
 print(compileTeal(approval_program(), mode=Mode.Application, version=7))
 ```
 --- 
 
-# What's Seq?
+# Seq
 
 ```py
     return Seq(
 ```
 
+* `Seq` stands for sequence, meaning a sequence of PyTeal expressions
 * `compileTeal` ultimately expects a PyTeal expression
 * Expressions are methods that compile down to TEAL
-* All other methods, such as `Log`, also expect PyTeal expression
-* `Seq` stands for sequence, meaning a sequence of PyTeal expressions
+* All other methods, such as `Log` or `Return`, also expect PyTeal expression
 
 ---
 
-# Why Bytes and Int?
+# Bytes and Int
 
 ```py
         Log(Bytes("Hello World!")),
-        Int(1),
 ```
 
-* Why not `Log("Hello World")` or `1,`?
-* Every PyTeal expression (such as `Log` and `Seq`) expect another PyTeal expression as arguments
-* `"Hello World"` and `1` are python `str` and `int` objects, not PyTeal expressions
+* Why not `Log("Hello World")` or `Return(1)`?
+* `"Hello World"` and `1` are python `str` and `int` objects, which is not a PyTeal expression
 
 ---
 
-# Why Return?
+# Return, Approve, Reject
 ```py
-        Return()
+        Return(Int(1))
 ```
 
 * We want our `approval_program()` function to return the `Seq`
-* Every argument of the `Seq` must be a PyTeal expression
+  * Every argument of the `Seq` must be a PyTeal expression
 * `Return()` is the PyTeal expression for the `return` opcode
-* `Approve()` is shorthand for `Int(1), Return()`
+* Helper methods
+  * `Approve()` == `Return(Int(1))`
+  * `Reject()` == `Return(Int(0))`
 
 ---
 
@@ -97,6 +96,20 @@ def approval_program():
         Log(Concat(Bytes("The first account is "), Txn.accounts[1])), # Txn.accounts[0] is always sender
         Log(Concat(Bytes("The first asset ID is "), Itob(Txn.assets[0]))),
         Log(Concat(Bytes("The first app ID is "), Itob(Txn.applications[0]))),
+        Approve()
+    )
+```
+
+---
+
+# Global/Local State
+
+```py
+def approval_program():
+    return Seq(
+        App.globalPut(Bytes("Last Caller"), Txn.sender()),
+        # Note: Before using local state Txn.sender() must opt into app
+        App.localPut(Txn.sender(), Bytes("Last Call"), Global.latest_timestamp()),
         Approve()
     )
 ```
@@ -144,12 +157,7 @@ def approval_program():
 
 # What's Next?
 
-* If you want a full framework for writing ABI-compliant applicaions
-  * Learn Beaker!
-    * Easily route ABI methods
-    * Easily read and write application state
-    * Easily write application tests
-    * Easily implement logic in TypeScript front-ends
-* If you want to know more about PyTeal
-  * [Refer to the documentation](https://pyteal.readthedocs.io/en/latest/)
-  * [Visit the developer portal](https://developer.algorand.org/docs/get-details/dapps/pyteal/)
+* Learn about PyTeal's ABI support
+* Access PyTeal learning resources
+  * [Documentation](https://pyteal.readthedocs.io/en/latest/)
+  * [Developer portal](https://developer.algorand.org/docs/get-details/dapps/pyteal/)
