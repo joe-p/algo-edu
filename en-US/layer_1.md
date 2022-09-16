@@ -1,8 +1,15 @@
 ---
 marp: true
-header: 'Algorand Layer 1 Features - 09/08/2022 '
-footer: 'github.com/joe-p/algo-edu'
 paginate: true
+backgroundImage: url('../bg.png')
+theme: algorand
+---
+![bg](../title_bg.png)
+<div id='title'>Algorand's Layer-1</div>
+<div id='subtitle'>Intro to Algorand's Layer-1 Features</div>
+<div id='date'>September 16, 2022</div>
+<div id='name'>Joe Polny</div>
+
 ---
 # [Performance](https://developer.algorand.org/docs/get-started/basics/why_algorand/#performance)
 

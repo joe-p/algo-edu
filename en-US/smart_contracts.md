@@ -1,8 +1,15 @@
 ---
 marp: true
-header: 'Algorand Smart Contracts - 09/07/2022 '
-footer: 'github.com/joe-p/algo-edu'
 paginate: true
+backgroundImage: url('../bg.png')
+theme: algorand
+---
+![bg](../title_bg.png)
+<div id='title'>Algorand Smart Contracts</div>
+<div id='subtitle'>Algorand Smart Contract Design and Features</div>
+<div id='date'>September 16, 2022</div>
+<div id='name'>Joe Polny</div>
+
 ---
 
 # Tech Stack

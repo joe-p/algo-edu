@@ -1,0 +1,38 @@
+/* @theme algorand */
+@import-theme 'default';
+
+h1 {
+    color: rgb(0,105,131);
+    position: absolute;
+    top: 10%;
+}
+
+#title {
+    position: absolute;
+    top: 10%;
+    font-size: 125px;
+    color: rgb(0,105,131);
+    font-weight: bold;
+}
+
+#subtitle {
+    color: rgb(0,105,131);
+    position: relative;
+    top: 20%;
+    font-size: 32px;
+}
+
+#date {
+    position: absolute;
+    bottom: 10%;
+    color: rgb(126,126,127);
+    font-size: 18px
+}
+
+#name {
+    position: absolute;
+    bottom: 10%;
+    color: rgb(126,126,127);
+    font-size: 18px;
+    left: 25%;
+}

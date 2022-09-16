@@ -1,5 +1,6 @@
 *.pptx
 *.pdf
 *.zip
+*.png
 .vscode/
 node_modules/

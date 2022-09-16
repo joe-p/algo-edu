@@ -1,8 +1,15 @@
 ---
 marp: true
-header: 'Intro To PyTeal - 09/15/2022 '
-footer: 'github.com/joe-p/algo-edu'
 paginate: true
+backgroundImage: url('../bg.png')
+theme: algorand
+---
+![bg](../title_bg.png)
+<div id='title'>Intro to PyTeal</div>
+<div id='subtitle'>Getting started with PyTeal</div>
+<div id='date'>September 16, 2022</div>
+<div id='name'>Joe Polny</div>
+
 ---
 
 # Hello World
@@ -183,3 +190,11 @@ def add(a: abi.Uint64, b: abi.Uint64, *, output: abi.Uint64) -> Expr:
     # The return value will be in output
     return output.set(a.get() + b.get())
 ```
+
+---
+# Resources
+
+* [PyTeal on GitHub](https://github.com/algorand/pyteal)
+* [PyTeal Documentation](https://pyteal.readthedocs.io/en/latest/)
+* [PyTeal on Developer Portal](https://developer.algorand.org/docs/get-details/dapps/pyteal/)
+* [Demo ABI Repository](https://github.com/algorand-devrel/demo-abi)

@@ -1,8 +1,15 @@
 ---
 marp: true
-header: 'Intro to Algorand Development - 09/07/2022 '
-footer: 'github.com/joe-p/algo-edu'
 paginate: true
+backgroundImage: url('../bg.png')
+theme: algorand
+---
+![bg](../title_bg.png)
+<div id='title'>Algorand Development</div>
+<div id='subtitle'>Intro to building on Algorand</div>
+<div id='date'>September 16, 2022</div>
+<div id='name'>Joe Polny</div>
+
 ---
 # Tools
 
