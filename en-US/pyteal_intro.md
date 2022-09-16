@@ -1,6 +1,6 @@
 ---
 marp: true
-header: 'Intro To PyTeal - 09/12/2022 '
+header: 'Intro To PyTeal - 09/15/2022 '
 footer: 'github.com/joe-p/algo-edu'
 paginate: true
 ---
@@ -155,9 +155,31 @@ def approval_program():
 
 ---
 
-# What's Next?
+# ABI Router
 
-* Learn about PyTeal's ABI support
-* Access PyTeal learning resources
-  * [Documentation](https://pyteal.readthedocs.io/en/latest/)
-  * [Developer portal](https://developer.algorand.org/docs/get-details/dapps/pyteal/)
+```py
+# Main router class
+router = Router(
+    "demo-abi", # Name of the contract
+    BareCallActions( # Bare call means no arguments
+        # On create only, just approve
+        no_op=OnCompleteAction.create_only(Approve()),
+        # Always let creator update/delete but only by the creator of this contract
+        update_application=OnCompleteAction.always(Return(is_creator)),
+        delete_application=OnCompleteAction.always(Return(is_creator)),
+        # clear_state must be defined for clear program
+        clear_state=OnCompleteAction.never(),
+    ),
+)
+```
+---
+
+# ABI Methods
+
+```py
+@router.method
+def add(a: abi.Uint64, b: abi.Uint64, *, output: abi.Uint64) -> Expr:
+    # Note the use of .set() and .get()
+    # The return value will be in output
+    return output.set(a.get() + b.get())
+```
