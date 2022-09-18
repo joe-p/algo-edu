@@ -4,7 +4,7 @@
   },
   "scripts": {
     "start": "marp ./**/*.md --pdf --html --theme ./algorand.css --allow-local-files && marp ./**/*.md --pptx --html --theme ./algorand.css --allow-local-files",
-    "zip": "zip algo-edu-$(git rev-parse --short HEAD)$(git diff --quiet || echo '-dirty').zip ./**/*.md ./**/*.pptx",
+    "zip": "zip algo-edu-$(git rev-parse --short HEAD)$(git diff --quiet || echo '-dirty').zip ./**/*.md ./**/*.pptx ./**/*.pdf",
     "clean": "rm -f ./**/*.pptx && rm -f ./*.zip"
   }
 }
