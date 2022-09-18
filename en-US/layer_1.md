@@ -66,7 +66,11 @@ The average TPS right now is between 10-20 (for most chains, including Algorand)
   * Since ALGO is capped, the active state of the blockchain is also capped
 
 ---
-
+<style scoped>
+table {
+  font-size: 20px;
+}
+</style>
 # MBR Changes
 
 | Action | Effect | Effect on MBR |
