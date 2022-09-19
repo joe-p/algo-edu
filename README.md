@@ -1,3 +1,7 @@
+# Algorand Education
+
+This repository contains open-source educational content on various aspects of the Algorand network and ecosystem. For information on contribution and how to generated presentations from this content, refer to the [guide](./GUIDE.md)
+
 # en-US Content
 | Content | Description | Status | Last Updated | Primary Maintainer |
 | ------ | ----------- | ------ | ------------- | ---------- |
