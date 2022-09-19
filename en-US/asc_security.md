@@ -114,7 +114,7 @@ return Seq(
 
 ---
 
-# App Guidlines: Secrets
+# App Guidelines: Secrets
 
 * It should be assumed that nothing can be kept secret on chain
 * Never use something like password authentication for an application
