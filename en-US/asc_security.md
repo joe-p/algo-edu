@@ -23,9 +23,11 @@ The content provided here is not an exhaustive list of security considerations. 
 * Smart Signatures
   * Require thorough input validation
   * Delegation puts users account and funds at risk
+  * End-users must have smart contract logic
 * Applications
   * Can hardcode exact transaction that should take place
   * Limited input validation necessary
+  * End-users just need application ID
 
 ---
 
