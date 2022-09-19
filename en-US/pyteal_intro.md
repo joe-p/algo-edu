@@ -12,6 +12,19 @@ theme: algorand
 
 ---
 
+# TEAL vs PyTeal
+
+* TEAL
+  * Assembly-like language
+  * Cumbersome to write
+  * Hard to read
+* PyTeal
+  * Familiar for Python devs
+  * Easier to read and write
+  * Access to abstractions such as types, loops, etc.
+
+---
+
 # Hello World
 
 ```py
