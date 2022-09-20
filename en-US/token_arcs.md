@@ -7,7 +7,7 @@ theme: algorand
 ![bg](../title_bg.png)
 <div id='title'>Token ARCs</div>
 <div id='subtitle'>Overview of token-related ARCs</div>
-<div id='date'>September 18, 2022</div>
+<div id='date'>September 20, 2022</div>
 <div id='name'>Joe Polny</div>
 
 ---
@@ -117,26 +117,24 @@ theme: algorand
 
 ---
 
-# [ARC-0069](https://arc.algorand.foundation/ARCs/arc-0069) and [ARC-0019](https://arc.algorand.foundation/ARCs/arc-0019)
-<style scoped>
-  ul {
-    font-size: 27px;
-    position: relative;
-    top: 10%
-  }
-</style>
-* Both provide mutable metadata
-* ARC-0069
-  * Uses note field for metadata
+# [ARC-0069](https://arc.algorand.foundation/ARCs/arc-0069)
+
+* Uses note field for metadata
+* Limitations
   * Metadata limited to 1KB due to note size limit
   * Indexer must be used to query asset config transaction
   * Image is immutable
-* ARC-0019
-  * Uses reserve address field for point to IPFS metadata
-  * Metadata has no size restrictions
-  * Only algod is needed to get metadata
-  * Image is mutable
 
+---
+
+# [ARC-0019](https://arc.algorand.foundation/ARCs/arc-0019)
+
+* Uses reserve address field for point to IPFS metadata
+* Metadata has no size restrictions
+* Only algod is needed to get metadata
+* Image is mutable
+* Limitation
+  * Can't use reserve address field as intended
 ---
 
 # [ARC-0020](https://arc.algorand.foundation/ARCs/arc-0020)
@@ -164,11 +162,23 @@ theme: algorand
 ---
 
 # How to decide?
+<style scoped>
+  ul {
+    font-size: 26px;
+    position: relative;
+    top: 5%
+  }
+</style>
 
 * Start with ARC-0003
 * Need mutability?
-  * ARC-0019
+  * Need reserve address?
+    * **Note:** reserve address has no affect at protocol level
+    * ARC-0069
+  * Otherwise
+    * ARC-0019
 * Need functionality ASAs don't provide?
-  * ARC-0020
-* Need enforced royalties on all sales?
-  * ARC-0018
+  * Need enforced royalties on sales?
+    * ARC-0018
+  * Otherwise
+    * ARC-0020
