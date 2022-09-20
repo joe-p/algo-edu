@@ -118,7 +118,13 @@ theme: algorand
 ---
 
 # [ARC-0069](https://arc.algorand.foundation/ARCs/arc-0069) and [ARC-0019](https://arc.algorand.foundation/ARCs/arc-0019)
-
+<style scoped>
+  ul {
+    font-size: 27px;
+    position: relative;
+    top: 10%
+  }
+</style>
 * Both provide mutable metadata
 * ARC-0069
   * Uses note field for metadata
