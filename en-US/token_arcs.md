@@ -139,14 +139,27 @@ theme: algorand
 
 # [ARC-0020](https://arc.algorand.foundation/ARCs/arc-0020)
 
-* ASAs implemented as smart contracts
+* "Smart ASAs" via smart contract
 * Can follow some existing ARCs, such as ARC3
 * Allows more functionality than ASAs
   * Transfer logic
-  * Royalties
   * Mutability
 * Should only be used when ASAs aren't an option
   * Smart contracts have much more security considerations
+
+---
+
+# ARC-0020 Interfaces
+
+* Has ABI methods for performing same operations you can on ASAs
+  * Create
+  * Config
+  * Freeze
+  * Destroy
+  * Transfer (and clawback)
+* Adds the following methods ontop of ASAs
+  * Asset Freeze vs Account Freeze
+  * Get circulating supply
 
 ---
 
