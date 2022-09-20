@@ -117,12 +117,26 @@ theme: algorand
 
 ---
 
-# [ARC-0069](https://arc.algorand.foundation/ARCs/arc-0069)
+# [ARC-0019](https://arc.algorand.foundation/ARCs/arc-0019)
 
 * Similar to ARC-0003, but metadata is mutable
-* Metadata is read from the most recent asset config transaction
-  * The metadata is contained inside the note of the transaction
-* More limited metadata options due to note size restriction
+* IPFS CID is calculated based on reserve address
+  * Reserve address can be changed by ASA manager
+---
+
+# [ARC-0069](https://arc.algorand.foundation/ARCs/arc-0069) vs [ARC-0019](https://arc.algorand.foundation/ARCs/arc-0019)
+
+* Both provide mutable metadata
+* ARC-0069
+  * Uses note field for metadata
+  * Metadata limited to 1KB due to note size limit
+  * Indexer must be used to query asset config transaction
+  * Image cannot change
+* ARC-0019
+  * Uses reserve address field for point to IPFS metadata
+  * Metadata has no size restrictions
+  * Only algod is needed to get metadata
+  * Image can be updated
 
 ---
 
@@ -153,8 +167,8 @@ theme: algorand
 # How to decide?
 
 * Start with ARC-0003
-* Need on-chain mutability?
-  * ARC-0069
+* Need mutability?
+  * ARC-0019
 * Need functionality ASAs don't provide?
   * ARC-0020
 * Need enforced royalties on all sales?
