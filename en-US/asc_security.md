@@ -121,3 +121,17 @@ return Seq(
   * Node runners can "intercept" transactions to see password and use it themselves
   * Provided hashing opcodes are not intended for passwords
 * Oracle networks using privacy-preserving tech such as Intel SGX also have vulernabilites
+
+---
+
+# Auditing Options
+
+**Disclaimer:** Being on this list does **NOT** signify endorsement. Due diligence is required. 
+* [Ceritik](https://www.certik.com/ecosystems/algorand)
+* [Kudelski](https://kudelskisecurity.com/services/applied-security/blockchain-security/)
+* [Coinspect](https://www.coinspect.com/)
+* [VantagePoint](https://www.vantagepnt.com/financial-institutions/cybersecurity/)
+* [Halborn](https://halborn.com/)
+* [Runtime Verification](https://runtimeverification.com/algorand/)
+* [UlamLabs](https://www.ulam.io/software-services/smart-contract-audits)
+* [ImmuneFi](https://immunefi.com/) (bug bounty platform)
