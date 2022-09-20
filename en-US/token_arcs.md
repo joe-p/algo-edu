@@ -149,7 +149,7 @@ theme: algorand
 
 ---
 
-# ARC-0020 Interfaces
+# ARC-0020 Interface
 
 * Has ABI methods for performing same operations you can on ASAs
   * Create
