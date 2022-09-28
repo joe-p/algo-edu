@@ -130,7 +130,7 @@ return Seq(
 * [Ceritik](https://www.certik.com/ecosystems/algorand)
 * [Kudelski](https://kudelskisecurity.com/services/applied-security/blockchain-security/)
 * [Coinspect](https://www.coinspect.com/)
-* [VantagePoint](https://www.vantagepnt.com/financial-institutions/cybersecurity/)
+* [VantagePoint](https://www.vantagepoint.sg/contact-us)
 * [Halborn](https://halborn.com/)
 * [Runtime Verification](https://runtimeverification.com/algorand/)
 * [UlamLabs](https://www.ulam.io/software-services/smart-contract-audits)
