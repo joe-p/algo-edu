@@ -1,21 +1,21 @@
 # Algorand Education
 
-This repository contains open-source educational content on various aspects of the Algorand network and ecosystem. For information on contribution and how to generated presentations from this content, refer to the [guide](./GUIDE.md)
+This repository contains open-source educational content on various aspects of the Algorand network and ecosystem. For information on contribution and how to generated presentations from this content, refer to the [guide](./GUIDE.pdf)
 
 # en-US Content
-| Content | Description | Status | Last Updated | Primary Maintainer |
-| ------ | ----------- | ------ | ------------- | ---------- |
-| [Network](en-US/network.md) | Overview of Algorand network topology, software, and decentralization | WIP | 09/16/22 | [joe-p](https://github.com/joe-p) |
-| [Layer-1 Features](en-US/layer_1.md) | Overview of Algorand's layer-1 performance and features | WIP | 09/16/22 | [joe-p](https://github.com/joe-p) |
-| [Smart Contracts](en-US/smart_contracts.md) | Overview of Algorand smart contracts | WIP | 09/16/22 | [joe-p](https://github.com/joe-p) |
-| [Development Intro](en-US/dev_intro.md) | Overview of development tools and resources | WIP | 09/16/22  | [joe-p](https://github.com/joe-p) |
-| [Intro to PyTeal](en-US/pyteal_intro.md) | Introduction to PyTeal concepts | WIP | 09/16/22 | [joe-p](https://github.com/joe-p) |
-| [ASC Security Guidelines](en-US/asc_security.md) | Best practices when building smart contracts on Algorand | WIP | 09/18/22 | [joe-p](https://github.com/joe-p) |
-| [Token ARCs](en-US/token_arcs.md) | Overview of token-related ARCs | WIP | 09/18/22 | [joe-p](https://github.com/joe-p) |
-| Intro to Beaker | Introduction to JavaScript SDK concepts | TODO | | TBD |
-| Intro to JavaScript SDK | Introduction to beaker concepts | TODO | | TBD |
-| Governance and Tokenomics | Overview of governance process and tokenomics | TODO | | TBD |
-| Community and Ecosystem | Overview of Algorand community and ecosystem | TODO | | TBD |
+| Content | Description | Status | Primary Maintainer |
+| ------ | ----------- | ------------- | ---------- |
+| [Network](resources/en-US/network.pdf) | Overview of Algorand network topology, software, and decentralization | WIP | [joe-p](https://github.com/joe-p) |
+| [Layer-1 Features](resources/en-US/layer_1.pdf) | Overview of Algorand's layer-1 performance and features | WIP | [joe-p](https://github.com/joe-p) |
+| [Smart Contracts](resources/en-US/smart_contracts.pdf) | Overview of Algorand smart contracts | WIP | [joe-p](https://github.com/joe-p) |
+| [Development Intro](resources/en-US/dev_intro.pdf) | Overview of development tools and resources | WIP | [joe-p](https://github.com/joe-p) |
+| [Intro to PyTeal](resources/en-US/pyteal_intro.pdf) | Introduction to PyTeal concepts | WIP | [joe-p](https://github.com/joe-p) |
+| [ASC Security Guidelines](resources/en-US/asc_security.pdf) | Best practices when building smart contracts on Algorand | WIP | [joe-p](https://github.com/joe-p) |
+| [Token ARCs](resources/en-US/token_arcs.pdf) | Overview of token-related ARCs | WIP | [joe-p](https://github.com/joe-p) |
+| Intro to Beaker | Introduction to JavaScript SDK concepts | TODO | TBD |
+| Intro to JavaScript SDK | Introduction to beaker concepts | TODO | TBD |
+| Governance and Tokenomics | Overview of governance process and tokenomics | TODO | TBD |
+| Community and Ecosystem | Overview of Algorand community and ecosystem | TODO | TBD |
 
 # en-US Glossary
 
