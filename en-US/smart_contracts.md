@@ -7,7 +7,7 @@ theme: algorand
 ![bg](../title_bg.png)
 <div id='title'>Algorand Smart Contracts</div>
 <div id='subtitle'>Algorand Smart Contract Design and Features</div>
-<div id='date'>September 16, 2022</div>
+<div id='date'>September 27, 2022</div>
 <div id='name'>Joe Polny</div>
 
 ---
@@ -43,6 +43,30 @@ All of these will be discussed in more depth in future slides
 
 ---
 
+# TEAL
+
+```c
+#pragma version 6
+byte "hello " // ["Hello "]
+byte "world" // ["World", "Hello "]
+concat // ["Hello World"]
+log // [] "Hello World" will be logged on chain
+int 1 // [1]
+return
+```
+
+---
+
+# PyTeal
+
+```python
+return Seq(
+  Log(Bytes("Hello World")),
+  Approve()
+)
+```
+---
+
 # [Modes of Use](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/)
 
 * Stateless - Smart Signature
@@ -69,6 +93,7 @@ Applications are strongly preferred for a better user experience and security. N
   * 16 key/value pairs *per account*
   * Limited to 128 bytes per key/value pair
   * Accounts must opt-in
+  * Can be cleared by end-user
 
 ---
 
@@ -89,6 +114,14 @@ Applications are strongly preferred for a better user experience and security. N
 * Logs are only saved upon completion
 * Other applications can read logged data
 
+
+---
+
+# Randomness
+
+* Random numbers can be generated off-chain
+* `vrf_verify` opcode can be used verify number on-chain
+* Oracles can provide random numbers through smart contracts
 
 ---
 
@@ -114,19 +147,6 @@ Applications are strongly preferred for a better user experience and security. N
 * OnComplete
   * Action to take upon execution of the logic
   
-
----
-
-# App Creation Anatomy
-
-* TEAL Programs
-  * Approval program defines primary logic for application creation/calls
-  * Clear program defines logic for clearing local application state
-* Schema
-  * Defines the number of key/value pairs that store integers or bytes
-  * Defined for both global state and local state
-  * Schema can not be updated
-
 ---
 
 # On Completions
@@ -139,6 +159,18 @@ Applications are strongly preferred for a better user experience and security. N
 | ClearState | Clear | Clear local state of sender regardless of logic result |
 | UpdateApplication | Approval | Updates the approval and clear programs |
 | DeleteApplication | Approval | Deletes the application |
+
+---
+
+# App Creation Anatomy
+
+* TEAL Programs
+  * Approval program defines primary logic for application creation/calls
+  * Clear program defines logic for clearing local application state
+* Schema
+  * Defines the number of key/value pairs that store integers or bytes
+  * Defined for both global state and local state
+  * Schema can not be updated
 
 ---
 # ARC-0004: ABI
