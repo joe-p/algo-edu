@@ -2,9 +2,17 @@
   "dependencies": {
     "@marp-team/marp-cli": "^2.1.2"
   },
+  "marp": {
+    "inputDir": "./resources", 
+    "html": true,
+    "theme": "./resources/algorand.css",
+    "allowLocalFiles": true
+  },
   "scripts": {
-    "start": "marp ./**/*.md --pdf --html --theme ./algorand.css --allow-local-files && marp ./**/*.md --pptx --html --theme ./algorand.css --allow-local-files",
-    "zip": "zip algo-edu-$(git rev-parse --short HEAD)$(git diff --quiet || echo '-dirty').zip ./**/*.md ./**/*.pptx ./**/*.pdf",
-    "clean": "rm -f ./**/*.pptx && rm -f ./*.zip"
+    "pdfs": "marp --pdf",
+    "pptx": "marp --pptx",
+    "zip": "zip algo-edu-$(git rev-parse --short HEAD)$(git diff --quiet || echo '-dirty').zip resources/**/*",
+    "start": "npm run clean && (npm run pdfs & npm run pptx) && npm run zip",
+    "clean": "rm -f *.zip && find resources/ -name '*.pdf' -type f -delete && find resources/ -name '*.pptx' -type f -delete"
   }
 }
