@@ -29,10 +29,12 @@ theme: algorand
 # Algorand Virtual Machine
 
 * Available data
-  * Transaction information (sender, fee, amount, etc.)
-  * Global variables (current round, latest timestamp, etc.)
+  * Transaction information 
+    * Sender, fee, amount, etc.
+  * Global variables
+    * Current round, latest timestamp, etc.
   * Application state
-* AVM and TEAL are turing complete
+* TEAL is turing complete
 * Constraints
   * Static fees mean we need to constrain execution in another way
   * Constraints are hardcoded into AVM to limit computational complexity
@@ -41,30 +43,6 @@ theme: algorand
 All of these will be discussed in more depth in future slides
 -->
 
----
-
-# TEAL
-
-```c
-#pragma version 6
-byte "hello " // ["Hello "]
-byte "world" // ["World", "Hello "]
-concat // ["Hello World"]
-log // [] "Hello World" will be logged on chain
-int 1 // [1]
-return
-```
-
----
-
-# PyTeal
-
-```python
-return Seq(
-  Log(Bytes("Hello World")),
-  Approve()
-)
-```
 ---
 
 # [Modes of Use](https://developer.algorand.org/docs/get-details/dapps/smart-contracts/)
@@ -84,16 +62,25 @@ Applications are strongly preferred for a better user experience and security. N
 
 
 ---
-# Application State
 
-* Global state
-  * 64 key/value pairs
-  * Limited to 128 bytes per key/value pair
-* Local state
+# Application State: Global Storage
+* 64 key/value pairs
+* Limited to 128 bytes per key/value pair
+* Can be read by any app on-chain
+
+---
+
+# Application State: Local Storage
   * 16 key/value pairs *per account*
   * Limited to 128 bytes per key/value pair
+  * Can be read by any app on-chain
   * Accounts must opt-in
   * Can be cleared by end-user
+---
+# Application State: Box Storage
+  * "Unlimited" named storage segments
+  * Up to 32kb per box
+  * Can only be read by the app that created the box
 
 ---
 
@@ -135,20 +122,9 @@ Applications are strongly preferred for a better user experience and security. N
     * accounts
     * applications
     * assets
+    * boxes
   
 ---
-
-# App Call Anatomy
-
-* App arrays
-  * Defines what state can be accessed
-* Arguments array
-  * Arguments that can be read by the application
-* OnComplete
-  * Action to take upon execution of the logic
-  
----
-
 # On Completions
 
 | OnComplete | Program | Action |
@@ -161,6 +137,20 @@ Applications are strongly preferred for a better user experience and security. N
 | DeleteApplication | Approval | Deletes the application |
 
 ---
+
+# App Call Anatomy
+
+* App arrays
+  * Defines what state can be accessed
+  * Accounts, assets, apps, and boxes
+* Arguments array
+  * Arguments that can be read by the application
+* OnComplete
+  * Action to take upon execution of the logic
+  
+---
+
+
 
 # App Creation Anatomy
 
@@ -180,3 +170,28 @@ Applications are strongly preferred for a better user experience and security. N
 * Provides standard way of method calling
 * JSON schema for defining available methods
 * Logging for return values
+
+---
+
+# TEAL
+
+```c
+#pragma version 6
+byte "hello " // ["Hello "]
+byte "world" // ["World", "Hello "]
+concat // ["Hello World"]
+log // [] "Hello World" will be logged on chain
+int 1 // [1]
+return
+```
+
+---
+
+# PyTeal
+
+```python
+return Seq(
+  Log(Bytes("Hello World")),
+  Approve()
+)
+```
