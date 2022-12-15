@@ -59,7 +59,16 @@ All of these will be discussed in more depth in future slides
 <!--
 Applications are strongly preferred for a better user experience and security. Now with inner transactions an app can do most things that you used to need a smart signature for.
 -->
+---
 
+# [Minimum balance requirement (MBR)](https://developer.algorand.org/docs/get-details/accounts/#minimum-balance)
+
+* Every account has a minimum balance
+  * Starts at 0.1 ALGO
+* Any transaction that would result in an account going under the MBR will fail
+  * Exception is when an account makes an account to specifically close out the entire balance
+* MBR is a way to rent space in the current state of the blockahin
+  * Since ALGO is capped, the active state of the blockchain is also capped
 
 ---
 
@@ -67,6 +76,7 @@ Applications are strongly preferred for a better user experience and security. N
 * 64 key/value pairs
 * Limited to 128 bytes per key/value pair
 * Can be read by any app on-chain
+* MBR funded during app creation by creator
 
 ---
 
@@ -74,6 +84,7 @@ Applications are strongly preferred for a better user experience and security. N
   * 16 key/value pairs *per account*
   * Limited to 128 bytes per key/value pair
   * Can be read by any app on-chain
+  * MBR funded during opt-in by end-user
   * Accounts must opt-in
   * Can be cleared by end-user
 ---
@@ -81,6 +92,7 @@ Applications are strongly preferred for a better user experience and security. N
   * "Unlimited" named storage segments
   * Up to 32kb per box
   * Can only be read by the app that created the box
+  * MBR funded during *box* creation by contract account
 
 ---
 
