@@ -61,14 +61,15 @@ Applications are strongly preferred for a better user experience and security. N
 -->
 ---
 
-# [Minimum balance requirement (MBR)](https://developer.algorand.org/docs/get-details/accounts/#minimum-balance)
+
+# [Minimum Balance Requirement (MBR)](https://developer.algorand.org/docs/get-details/accounts/#minimum-balance)
 
 * Every account has a minimum balance
   * Starts at 0.1 ALGO
-* Any transaction that would result in an account going under the MBR will fail
-  * Exception is when an account makes an account to specifically close out the entire balance
-* MBR is a way to rent space in the current state of the blockahin
-  * Since ALGO is capped, the active state of the blockchain is also capped
+* Transaction fails if balance is below MBR
+  * Accounts can optionally close out entire balance
+* MBR is basically data rental
+  * Increase in on-chain data -> increase of MBR
 
 ---
 
@@ -76,7 +77,8 @@ Applications are strongly preferred for a better user experience and security. N
 * 64 key/value pairs
 * Limited to 128 bytes per key/value pair
 * Can be read by any app on-chain
-* MBR funded during app creation by creator
+* MBR funded during app creation by creator 
+  * Proportional to amount of storage used
 
 ---
 
@@ -84,15 +86,19 @@ Applications are strongly preferred for a better user experience and security. N
   * 16 key/value pairs *per account*
   * Limited to 128 bytes per key/value pair
   * Can be read by any app on-chain
-  * MBR funded during opt-in by end-user
+  * MBR funded during opt-in by end-user 
+    * Proportional to amount of storage used
   * Accounts must opt-in
   * Can be cleared by end-user
+
 ---
+
 # Application State: Box Storage
   * "Unlimited" named storage segments
   * Up to 32kb per box
   * Can only be read by the app that created the box
-  * MBR funded during *box* creation by contract account
+  * MBR funded during box creation by contract account 
+    * Proportional to box size
 
 ---
 
