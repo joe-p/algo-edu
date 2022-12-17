@@ -13,7 +13,7 @@ theme: algorand
 ---
 # [Performance](https://developer.algorand.org/docs/get-started/basics/why_algorand/#performance)
 
-* ~4 second block time
+* ~3.7 second block time
 * Instant finality
 * 6,000 TPS
 * .001 ALGO fee

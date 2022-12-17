@@ -44,10 +44,13 @@ These modes of configuration are orthogonal, although you typically run one at a
 
 # [Decentralization](https://metrics.algorand.org/#/decentralization/)
 
-* 1000+ nodes
-* Participation nodes are permissionless
-* Default relay nodes are chosen by Foundation
-  * Anyone can run one, but nodes must point to it
+* Participation nodes
+  * ~200 nodes
+  * permisionless
+* Relay nodes
+  * ~120 nodes
+  * Default relays chosen by Foundation
+  * Anyone can run relay, but nodes must point to it
 
 ---
 
