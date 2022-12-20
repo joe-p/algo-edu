@@ -7,7 +7,7 @@ theme: algorand
 ![bg](../title_bg.png)
 <div id='title'>Algorand Network</div>
 <div id='subtitle'>Topology and software powering Algorand</div>
-<div id='date'>September 16, 2022</div>
+<div id='date'>December 20, 2022</div>
 <div id='name'>Joe Polny</div>
 
 ---
@@ -45,8 +45,9 @@ These modes of configuration are orthogonal, although you typically run one at a
 # [Decentralization](https://metrics.algorand.org/#/decentralization/)
 
 * Participation nodes
-  * ~200 nodes
-  * permisionless
+  * ~200 unqiue accounts participating
+  * ~1.5B ALGO online
+  * Permisionless
 * Relay nodes
   * ~120 nodes
   * Default relays chosen by Foundation
@@ -70,7 +71,8 @@ These modes of configuration are orthogonal, although you typically run one at a
 
 * Requirements
   * Must be running participation node
-  * Must register as online with *participation* key
+  * Must register as online with participation key
+    * Seperate from signing keys
   * Must have 0.1 ALGO
 * Information
   * No explicit staking
@@ -83,18 +85,37 @@ The incentivization model is based on game theory. Someone with a large stake in
 
 ---
 
-# Hardware Requirements
+# Governance
+
+* ALGO-based voting on proposals
+* Currrently ran by Foundation
+* Roadmap towards decentralization
+  * xGovs to propigate proposals
+
+---
+
+# Node Requirements
 
 * Minimum requirements
   * 4 vCPU
   * 8GB RAM
   * 100 GB SSD (NVMe SSD recommended)
   * 100 Mbit broadband
-* Enterprise-grade
+* Recommended for participation
   * 8 vCPU
   * 16GB RAM
   * 500GB NVMe SSD
   * 1Gbps broadband symmetrical with low latency connection to the network
+
+---
+
+# Relay Requirements
+
+* 16 vCPU
+* 32 GB RAM
+* 3 TB NVMe SSD or equivalent
+* 30 TB/month egress
+* 1 Gbps connection with very low latency
 
 ---
 

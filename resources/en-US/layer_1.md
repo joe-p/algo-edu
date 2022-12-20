@@ -7,7 +7,7 @@ theme: algorand
 ![bg](../title_bg.png)
 <div id='title'>Algorand's Layer-1</div>
 <div id='subtitle'>Intro to Algorand's Layer-1 Features</div>
-<div id='date'>September 16, 2022</div>
+<div id='date'>December 20, 2022</div>
 <div id='name'>Joe Polny</div>
 
 ---
