@@ -7,7 +7,7 @@ theme: algorand
 ![bg](../title_bg.png)
 <div id='title'>Algorand's Layer-1</div>
 <div id='subtitle'>Intro to Algorand's Layer-1 Features</div>
-<div id='date'>December 20, 2022</div>
+<div id='date'>Feburary 3, 2023</div>
 <div id='name'>Joe Polny</div>
 
 ---
@@ -15,8 +15,7 @@ theme: algorand
 
 * ~3.7 second block time
 * Instant finality
-* 6,000 TPS
-* .001 ALGO fee
+* ~6,000 TPS
 * Low energy consumption
 
 <!--
@@ -99,3 +98,14 @@ table {
 * Smart contracts can also send 16 transactions
   * Total of 256 atomic transactions
 * Smart contracts can verify data of transactions in the same group
+
+---
+
+# Fees
+
+* 0.001 ALGO flat-fee for all transactions
+* Can be pooled in atomic transctions
+  * Including inner transactions
+* Fees scale up during congestion
+  * Transaction bytes multiplied by 2<sup>(number of blocks in memory pool)</sup>
+  * Inner transctions always 0.001 ALGO
